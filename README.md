@@ -2,6 +2,17 @@
 
 **降低 LLM 角色扮演中「软拒（soft refusal）」与「空回（empty response）」的思路手册**
 
+---
+
+### 🔗 关联项目推荐 (Sister Projects)
+
+- ⚙️ **官方 AstrBot 落地插件**：[astrbot_plugin_ive_world](https://github.com/SilenceSik/astrbot_plugin_ive_world)
+  > 本白皮书全部理论与机制的官方实装参考实现，包含完整的分层注入、动态高熵基串调度、双 Safe 块学术包裹抗截断及自动标签清洗。
+- 📖 **理论与移植白皮书（本项目）**：[rp-anti-refusal-playbook](https://github.com/SilenceSik/rp-anti-refusal-playbook)
+  > 纯理论与方法论指南，讲透三段式审核管线、注意力机制劫持原理以及跨框架复现方案。
+
+---
+
 这是一个**纯文档项目**，不包含任何插件代码。它讲清楚一套经过实战验证的对抗思路——**为什么模型会拒绝/空回、攻击发生在哪个环节、每层机制针对什么、怎样在别的 Agent 框架里复现**。
 
 灵感来源：类脑社区（LLM 闲聊社区群系）的 SillyTavern 酒馆预设——「梦鲸思客」「咩咩」「狐神抚」「双人成行」等。它们积累了大量的抗截断/抗空回/防审查手段，本项目把这些手法**系统化、理论化**，并补充了原创的输出端攻击思路。
