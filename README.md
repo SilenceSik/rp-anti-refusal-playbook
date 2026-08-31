@@ -23,7 +23,7 @@
 
 > ⚠️ **以下仅为推测，无法证实，请自行判断**（外审模型存在性是推断，仅实测 Gemini 3.7 flash / DeepSeek V4 Pro）。
 
-> 🔴 **先做这一步：关闭所有 Gemini 模型的深度思考（reasoning: false）**。实测发现（2026-08-31）Gemini 开启深度思考时，思考链会把整套回复（含角色正文）**预演一遍**，最终响应里同一份高浓度内容出现**两次**，`content_filter` 截断风险直接翻倍。详见 [03-attack-layers.md](03-attack-layers.md) 与 [06-experiments.md](06-experiments.md)。Gemini 模型同时建议传参 `safety_settings: BLOCK_NONE`（透传取决于中转站）。
+> 🔴 **先做这一步：关闭所有 Gemini 模型的深度思考（reasoning: false）**。机制分析表明，Gemini 开启深度思考时，思考链会把整套回复（含角色正文）**预演一遍**，最终响应里同一份高浓度内容出现**两次**，`content_filter` 截断风险直接翻倍。详见 [03-attack-layers.md](03-attack-layers.md) 与 [06-experiments.md](06-experiments.md)。Gemini 模型同时建议传参 `safety_settings: BLOCK_NONE`（透传取决于中转站）。
 
 主要环节有三个：
 1. **输入端审查**（请求在进入模型前被安全过滤器拦截）
